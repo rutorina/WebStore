@@ -81,7 +81,7 @@
 [data-bs-theme="dark"] .navbar-toggler-icon {
     filter: none;
 }
-/*fuckf off*/
+
 [data-bs-theme="dark"] .bg-light {
     background-color: #2d2d2d !important;
 }
