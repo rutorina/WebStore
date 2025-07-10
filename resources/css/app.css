@@ -1,0 +1,439 @@
+@import 'tailwindcss';
+
+/* Custom styles */
+@layer base {
+    body {
+        font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    }
+}
+
+@layer components {
+    .btn {
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        transition: background-color 0.2s, color 0.2s;
+    }
+    
+    .btn-primary {
+        background-color: #2563eb;
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background-color: #1d4ed8;
+    }
+    
+    .btn-secondary {
+        background-color: #e5e7eb;
+        color: #374151;
+    }
+    
+    .btn-secondary:hover {
+        background-color: #d1d5db;
+    }
+    
+    .card {
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+    }
+}
+
+/* Dark Theme Custom Styles */
+[data-bs-theme="dark"] {
+    --bs-body-bg: #121212;
+    --bs-body-color: #ffffff;
+    --bs-card-bg: #1e1e1e;
+    --bs-border-color: #333333;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: var(--bs-card-bg);
+    border-color: var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .navbar {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+[data-bs-theme="dark"] .navbar .navbar-brand,
+[data-bs-theme="dark"] .navbar .nav-link {
+    color: #000000 !important;
+}
+
+[data-bs-theme="dark"] .navbar .nav-link:hover {
+    color: #666666 !important;
+}
+
+[data-bs-theme="dark"] .navbar .nav-link.active {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+[data-bs-theme="dark"] .navbar-toggler {
+    border-color: #cccccc;
+}
+
+[data-bs-theme="dark"] .navbar-toggler-icon {
+    filter: none;
+}
+/*fuckf off*/
+[data-bs-theme="dark"] .bg-light {
+    background-color: #2d2d2d !important;
+}
+
+[data-bs-theme="dark"] .text-muted {
+    color: #adb5bd !important;
+}
+
+[data-bs-theme="dark"] .border {
+    border-color: var(--bs-border-color) !important;
+}
+
+[data-bs-theme="dark"] .bg-light {
+    background-color: #2d2d2d !important;
+}
+
+[data-bs-theme="dark"] .carousel-control-prev,
+[data-bs-theme="dark"] .carousel-control-next {
+    filter: invert(1);
+}
+
+[data-bs-theme="dark"] .pagination .page-link {
+    background-color: #1e1e1e;
+    border-color: #333333;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pagination .page-link:hover {
+    background-color: #333333;
+    border-color: #555555;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pagination .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+[data-bs-theme="dark"] .breadcrumb-item + .breadcrumb-item::before {
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+    background-color: #2d2d2d;
+    border-color: #333333;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+    background-color: #2d2d2d;
+    border-color: #0d6efd;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+[data-bs-theme="dark"] .modal-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .toast {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .table {
+    --bs-table-bg: #1e1e1e;
+    --bs-table-striped-bg: #2d2d2d;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .alert-info {
+    background-color: #1e3a5f;
+    border-color: #2e5984;
+    color: #b8daff;
+}
+
+[data-bs-theme="dark"] .alert-success {
+    background-color: #0f2f1f;
+    border-color: #1e5d32;
+    color: #a7d6a7;
+}
+
+[data-bs-theme="dark"] .alert-danger {
+    background-color: #4c1f1f;
+    border-color: #842029;
+    color: #f5c2c7;
+}
+
+[data-bs-theme="dark"] .alert-warning {
+    background-color: #664d0a;
+    border-color: #997404;
+    color: #ffecb5;
+}
+
+/* Smooth theme transition */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card, .form-control, .form-select, .btn, .modal-content, .navbar {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Product card hover effects */
+.product-card:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Hero section text styling */
+.bg-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.bg-gradient * {
+    color: white !important;
+}
+
+.bg-gradient .text-white {
+    color: white !important;
+}
+
+/* Product Image Styles */
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .product-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure images maintain aspect ratio in cards */
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Category card images */
+.category-card .card-img-top {
+    height: 200px;
+}
+
+/* Product Image Carousel Enhancements */
+.thumbnail-image {
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbnail-image:hover {
+    transform: scale(1.05);
+    border-color: #0d6efd !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+}
+
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 3px;
+}
+
+/* Stock quantity styling for low stock */
+.low-stock {
+    color: #dc3545 !important;
+}
+
+.normal-stock {
+    color: #198754 !important;
+}
+
+/* Fix pagination arrow size and styling */
+.pagination {
+    margin-bottom: 0;
+}
+
+.pagination .page-link {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 0.5rem 0.75rem;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure navigation arrows are properly sized */
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+    font-weight: normal;
+    min-width: 80px;
+}
+
+/* Better spacing and alignment */
+.pagination .page-item {
+    margin: 0 2px;
+}
+
+.pagination .page-item:first-child {
+    margin-left: 0;
+}
+
+.pagination .page-item:last-child {
+    margin-right: 0;
+}
+
+/* Override Bootstrap's default arrow styling */
+.pagination .page-item:first-child .page-link {
+    border-top-left-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+}
+
+.pagination .page-item:last-child .page-link {
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+}
+
+/* Clean pagination hover effects */
+.pagination .page-link:hover {
+    color: var(--bs-pagination-hover-color);
+    background-color: var(--bs-pagination-hover-bg);
+    border-color: var(--bs-pagination-hover-border-color);
+}
+
+/* Dark theme pagination improvements */
+[data-bs-theme="dark"] .pagination .page-link {
+    background-color: #2d2d2d;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pagination .page-link:hover {
+    background-color: #444444;
+    border-color: #666666;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .pagination .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Sticky Footer Layout */
+body {
+    min-height: 100vh;
+}
+
+#app {
+    min-height: 100vh;
+}
+
+/* Dark theme dropdown menu styles */
+[data-bs-theme="dark"] .dropdown-menu {
+    background-color: #2d2d2d;
+    border-color: #555555;
+}
+
+[data-bs-theme="dark"] .dropdown-item {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover,
+[data-bs-theme="dark"] .dropdown-item:focus {
+    background-color: #404040;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .dropdown-divider {
+    border-color: #555555;
+}
+
+[data-bs-theme="dark"] .navbar .dropdown-toggle::after {
+    filter: none;
+}
+
+/* Dark theme breadcrumb styles */
+[data-bs-theme="dark"] .breadcrumb {
+    background-color: transparent;
+}
+
+[data-bs-theme="dark"] .breadcrumb-item a {
+    color: #6ea8fe;
+}
+
+[data-bs-theme="dark"] .breadcrumb-item a:hover {
+    color: #9ec5fe;
+}
+
+[data-bs-theme="dark"] .breadcrumb-item.active {
+    color: #adb5bd;
+}
+
+/* Dark theme search form styles */
+[data-bs-theme="dark"] .navbar .form-control {
+    background-color: #2d2d2d;
+    border-color: #555555;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .navbar .form-control:focus {
+    background-color: #2d2d2d;
+    border-color: #0d6efd;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+[data-bs-theme="dark"] .navbar .form-control::placeholder {
+    color: #adb5bd;
+}
+
+[data-bs-theme="dark"] .navbar .btn-light {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    color: #212529;
+}
+
+[data-bs-theme="dark"] .navbar .btn-light:hover {
+    background-color: #f8f9fa;
+    border-color: #adb5bd;
+    color: #212529;
+}

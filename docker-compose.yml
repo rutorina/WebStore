@@ -1,0 +1,61 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: technosvit-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - technosvit
+
+  nginx:
+    image: nginx:alpine
+    container_name: technosvit-nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - technosvit
+
+  postgres:
+    image: postgres:15
+    container_name: technosvit-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: web_store
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rutorina147963-
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - technosvit
+
+  redis:
+    image: redis:alpine
+    container_name: technosvit-redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    networks:
+      - technosvit
+
+volumes:
+  postgres_data:
+
+networks:
+  technosvit:
+    driver: bridge
